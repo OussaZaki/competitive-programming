@@ -59,7 +59,7 @@ node ./kattis/solution.js
 I'm using `standard stdin/stdout` to read/write for my c++ implementations.
 To run any solution, you can use the command below. Then provide data on your own.
 
-N.B: you can use your preferred c++ compiler, I'm using **g++**
+*You can use your preferred c++ compiler, I'm using **g++***
 
 ```bash
 g++ pathToSolution/solution.js -o solution.out && ./solution.out
