@@ -5,6 +5,7 @@ My solutions for different programming problems, from different platforms:
 - [kattis 🐱](https://open.kattis.com)
 - [leetcode 🎗](https://leetcode.com/)
 - [hackerrank ☘️](https://hackerrank.com/)
+- [Moocs 🎓](https://www.edx.org/)
 
 ## Milestones
 
@@ -13,6 +14,7 @@ My solutions for different programming problems, from different platforms:
 - [ ] top 100 in Kattis.
 - [ ] 1 star in Leetcode.
 - [ ] 10 ProjectEuler problems from Hackerrank.
+- [ ] Finish [Algorithms and Data Structures](https://www.edx.org/micromasters/ucsandiegox-algorithms-and-data-structures) Micro Masters.
 
 ## How to run
 
@@ -46,10 +48,19 @@ rl.on("close", () => {
 });
 ```
 
-Run a given solution locally using, solution will run on interactive mode, where you can provide inputs on the go, then hit `ctrl + C` to close the input stream.
+Run a given solution locally using the command below, solution will run on interactive mode, where you can provide inputs on the go, then hit `ctrl + C` to close the input stream.
 
 ```bash
 node ./kattis/solution.js
+```
+
+### C++
+
+I'm using `standard stdin/stdout` to read/write for my c++ implementations.
+To run any solution, you can use the command below. Then provide data on your own.
+
+```bash
+cpp pathToSolution/solution.js -o solution && ./solution
 ```
 
 ## Ressources
