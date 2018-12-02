@@ -7,6 +7,7 @@
 #include <random>
 
 #define max(x,y) ((x > y)? x : y)
+#define min(x,y) ((x <= y)? x : y)
 #define N 5
 #define M 2e5
 
@@ -65,3 +66,21 @@ int64_t maxProductSmart(int n, int64_t* list) {
   return max * second_max;
 }
 
+int64_t maxProductRecursive(int n, int64_t* list) {
+  return 0;
+}
+
+int64_t maxRecursive(int begin, int end, int64_t* list, vector<int64_t> runner_ups) {
+  if (end == begin) return list[end];
+  int half = (end - 1) / 2;
+  int64_t max1 = maxRecursive(begin, begin + half, list, runner_ups);
+  int64_t max2 = maxRecursive(begin + half + 1, end, list, runner_ups);
+  if (max1 > max2) {
+    runner_ups.push_back(max2);
+    return max1;
+  }
+  else {
+    runner_ups.push_back(max1);
+    return max2;
+  }
+}
