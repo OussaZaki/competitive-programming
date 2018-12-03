@@ -12,12 +12,14 @@
 #include <chrono>
 
 using namespace std;
-#define M 10000000
-#define positive(x) !((x & (1 << 31)) | !x)
+
 #define START_TIMING auto start = std::chrono::high_resolution_clock::now();
 #define END_TIMING \
   chrono::duration<double> elapsed = std::chrono::high_resolution_clock::now() - start; \
   cout << "Execution time: " << elapsed.count() << " s\n";
+
+#define M 10000000
+#define positive(x) !((x & (1 << 31)) | !x)
 
 vector<int> get_frequencies()
 {
@@ -27,24 +29,6 @@ vector<int> get_frequencies()
   {
     fr.push_back(stoi(line, nullptr, 10));
   }
-  return fr;
-}
-
-vector<int> get_frequencies(string delimiter)
-{
-  string input;
-  getline(cin, input);
-
-  size_t pos = 0;
-  string token;
-  vector<int> fr;
-  while ((pos = input.find(delimiter)) != string::npos)
-  {
-    token = input.substr(0, pos);
-    fr.push_back(stoi(token, nullptr, 10));
-    input.erase(0, pos + delimiter.length());
-  }
-  fr.push_back(stoi(input, nullptr, 10));
   return fr;
 }
 
@@ -114,10 +98,6 @@ int day1_part2_bitset(vector<int> fr)
 int main()
 {
   vector<int> fr = get_frequencies();
-
-  // Submissions
   cout << day1_part1(fr) << endl;
-  // START_TIMING
   cout << day1_part2_bitset(fr) << endl;
-  // END_TIMING
 }
