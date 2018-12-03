@@ -12,10 +12,8 @@
 #include <chrono>
 #include <algorithm>
 
-
 using namespace std;
-#define M 10000000
-#define positive(x) !((x & (1 << 31)) | !x)
+
 #define START_TIMING auto start = std::chrono::high_resolution_clock::now();
 #define END_TIMING \
   chrono::duration<double> elapsed = std::chrono::high_resolution_clock::now() - start; \
@@ -92,7 +90,5 @@ int main()
 {
   vector<string> ids = get_ids();
   cout << day2_part1(ids) << endl;
-  // START_TIMING
   cout << day2_part2(ids) << endl;
-  // END_TIMING
 }
