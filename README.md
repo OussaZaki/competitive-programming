@@ -3,13 +3,14 @@
 My solutions for different programming problems, from different platforms:
 
 - [kattis 🐱](https://open.kattis.com)
-- [leetcode 🎗](https://leetcode.com/)
-- [hackerrank ☘️](https://hackerrank.com/)
-- [Moocs 🎓](https://www.edx.org/)
+- [leetcode 🎗](https://leetcode.com)
+- [hackerrank ☘️](https://hackerrank.com)
+- [Moocs 🎓](https://www.edx.org)
+- [AdventOfCode 🎄](https://adventofcode.com)
 
 ## Milestones
 
-### 2018 Goals
+### 2019 Goals 🙈
 
 - [ ] top 100 in Kattis.
 - [ ] 1 star in Leetcode.
