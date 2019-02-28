@@ -10,3 +10,11 @@ Problem statements can be accessed by enrolling in the mooc, or directly from th
   - Sum of Two Digits
   - Maximum Pairwise Product
 - Week 2 - [Algorithmic Warm-up](./problem_statements/week2_algorithmic_warmup.pdf)
+
+## How to run
+
+- C++ (g++ 5.2.1):
+
+```bash
+g++ -pipe -O2 -std=c++14 <filename> -lm
+```
