@@ -6,28 +6,31 @@
 #include <iostream>
 #include <random>
 
-#define max(x,y) ((x > y)? x : y)
-#define min(x,y) ((x <= y)? x : y)
+#define max(x, y) ((x > y) ? x : y)
+#define min(x, y) ((x <= y) ? x : y)
 #define N 5
 #define M 2e5
 
 using namespace std;
 
-int64_t maxProductNaive(int n, int* list);
-int64_t maxProductSmart(int n, int* list);
+int64_t maxProductNaive(int n, int *list);
+int64_t maxProductSmart(int n, int *list);
 
-int main(){
+int main()
+{
   random_device rd;  //Will be used to obtain a seed for the random number engine
   mt19937 gen(rd()); //Standard mersenne_twister_engine seeded with rd()
   uniform_int_distribution<int> disN(1, N);
   uniform_int_distribution<int> disM(1, M);
   int n;
 
-  while(1) {
+  while (1)
+  {
     n = disN(gen);
     int list[n];
 
-    for(int i = 0; i < n; i++){
+    for (int i = 0; i < n; i++)
+    {
       list[i] = disM(gen);
       cout << list[i] << " ";
     }
@@ -36,9 +39,12 @@ int main(){
     int64_t r1 = maxProductNaive(n, list);
     int64_t r2 = maxProductSmart(n, list);
 
-    if (r1 == r2) {
+    if (r1 == r2)
+    {
       cout << "OK\n";
-    } else {
+    }
+    else
+    {
       cout << "Not Ok: " << r1 << " " << r2;
       break;
     }
@@ -46,40 +52,52 @@ int main(){
   return 0;
 }
 
-int64_t maxProductNaive(int n, int64_t* list) {
+int64_t maxProductNaive(int n, int64_t *list)
+{
   int64_t _max = 0;
-  for (int i = 0; i < n - 1; i++) {
-    for (int j = i + 1; j < n; j++) {
+  for (int i = 0; i < n - 1; i++)
+  {
+    for (int j = i + 1; j < n; j++)
+    {
       _max = max(_max, (int64_t)list[i] * list[j]);
     }
   }
   return _max;
 }
 
-int64_t maxProductSmart(int n, int64_t* list) {
+int64_t maxProductSmart(int n, int64_t *list)
+{
   int64_t max = 0, second_max = 0;
-  for (int i = 0; i < n; i++) {
-    if (list[i] > max) second_max = max, max = list[i];
-    else if (list[i] == max || list[i] > second_max) second_max = list[i];
+  for (int i = 0; i < n; i++)
+  {
+    if (list[i] > max)
+      second_max = max, max = list[i];
+    else if (list[i] == max || list[i] > second_max)
+      second_max = list[i];
   }
 
   return max * second_max;
 }
 
-int64_t maxProductRecursive(int n, int64_t* list) {
+int64_t maxProductRecursive(int n, int64_t *list)
+{
   return 0;
 }
 
-int64_t maxRecursive(int begin, int end, int64_t* list, vector<int64_t> runner_ups) {
-  if (end == begin) return list[end];
+int64_t maxRecursive(int begin, int end, int64_t *list, vector<int64_t> runner_ups)
+{
+  if (end == begin)
+    return list[end];
   int half = (end - 1) / 2;
   int64_t max1 = maxRecursive(begin, begin + half, list, runner_ups);
   int64_t max2 = maxRecursive(begin + half + 1, end, list, runner_ups);
-  if (max1 > max2) {
+  if (max1 > max2)
+  {
     runner_ups.push_back(max2);
     return max1;
   }
-  else {
+  else
+  {
     runner_ups.push_back(max1);
     return max2;
   }
