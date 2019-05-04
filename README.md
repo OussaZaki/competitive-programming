@@ -2,11 +2,12 @@
 
 My solutions for different programming problems, from different platforms:
 
-- [kattis 🐱](https://open.kattis.com)
-- [leetcode 🎗](https://leetcode.com)
+- [Kattis 🐱](https://open.kattis.com)
+- [Leetcode 🎗](https://leetcode.com)
 - [hackerrank ☘️](https://hackerrank.com)
 - [Moocs 🎓](https://www.edx.org)
 - [AdventOfCode 🎄](https://adventofcode.com)
+- [Google Code Jam 🍓](https://codingcompetitions.withgoogle.com/codejam)
 
 ## Milestones
 
