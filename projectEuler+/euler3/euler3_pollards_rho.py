@@ -1,7 +1,5 @@
 #!/bin/python3
 
-import sys
-
 def is_prime(n):
     if n < 2:
         return False
@@ -10,9 +8,9 @@ def is_prime(n):
 
     def is_spsp(n, a):
         d, s = n-1, 0
-        while d%2 == 0:
+        while d % 2 == 0:
             d //= 2; s += 1
-            t = pow(a,d,n)
+            t = pow(a, d, n)
 
         if t == 1:
             return True
@@ -30,8 +28,7 @@ def is_prime(n):
             return False
     return True
 
-
-
+# return an array of factors
 def rho_factors(n, limit=1000000):
     def gcd(a,b):
         while b: a, b = b, a%b
@@ -52,13 +49,12 @@ def rho_factors(n, limit=1000000):
 
         return rho_factor(d, c+1, limit)
 
-    if -1 <= n <= 1: return [n]
-    if n < -1: return [-1] + rho_factors(-n, limit)
-
     fs = []
     while n % 2 == 0:
-        n = n // 2; fs = fs + [2]
-    if n == 1: return fs
+        n = n // 2
+        fs = [2]
+    if n == 1:
+        return fs
 
     while not is_prime(n):
         f = rho_factor(n, 1, limit)
@@ -66,7 +62,7 @@ def rho_factors(n, limit=1000000):
         fs = fs + [f]
     return sorted(fs + [n])
 
-t = int(input().strip())
-for i in range(t):
+T = int(input().strip())
+for _ in range(T):
     N = int(input().strip())
     print(rho_factors(N)[-1])
