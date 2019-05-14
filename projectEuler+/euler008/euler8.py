@@ -1,4 +1,5 @@
 #!/bin/python3
+
 from operator import mul
 from functools import reduce
 
