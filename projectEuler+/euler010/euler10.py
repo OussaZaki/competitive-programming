@@ -1,24 +1,50 @@
 #!/bin/python3
+from itertools import accumulate
 
-def sieve(N):
-    primes = []
-    sieve = [True] * (N + 1)
-    for i in range(2, N + 1, 1):
-        if sieve[i]:
+def primes_upto(limit):
+    "Return the list of prime numbers less than the limit passed"
+    primes = [2, 3]
+    is_prime = [False, False, True, True] + [False, True] * int((limit - 2)/2)
+    
+    for n in range(3, int(limit ** 0.5 + 1.5), 2):
+        if is_prime[n]:
+            for i in range(n * n, limit + 1, 2*n):
+                is_prime[i] = False
+
+    for i in range(5, limit + 1, 2):
+        if is_prime[i]:
             primes.append(i)
-            for multiple in range(i * i, N + 1, i):
-                sieve[multiple] = False
+
     return primes
 
-def sum_until(primes, end):
-    sum = 0
-    for p in primes:
-        if p <= end: sum += p
-        else: break
-    return sum
+def sieve(limit):
+    "Return the sieve for sum calculation"
+    is_prime = [False, False, True, True] + [False, True] * int((limit - 2)/2)
+    
+    for n in range(3, int(limit ** 0.5 + 1.5), 2):
+        if is_prime[n]:
+            for i in range(n * n, limit + 1, 2*n):
+                is_prime[i] = False
 
+    return is_prime
+
+
+
+def accumulate(sieve, limit):
+    sums, s = [], 0
+    for i in range(0, limit):
+        if sieve[i]:
+            s += i
+        sums.append(s)
+    return sums
+
+# Generate sums
+limit = 10 ** 6 + 1
+sums = accumulate(sieve(limit), limit)
+# print(sums)
+
+# Solve
 T = int(input().strip())
-primes = sieve(10 ** 6)
 for _ in range(T):
     N = int(input().strip())
-    print(sum_until(primes, N))
+    print(sums[N])
