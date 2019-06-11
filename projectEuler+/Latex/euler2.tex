@@ -1,0 +1,50 @@
+\[F_n = 
+\left\{
+  \begin{array}{lr}
+    0 &  n = 0\\
+    1 &  n = 1\\
+    F_{n-1} + F_{n-2} & n > 1
+  \end{array}
+\right.
+\]
+
+\begin{align*}
+  F_n  &= F_{n-1} + F_{n-2}\\
+      &= (F_{n-2} + {\color{ForestGreen}F_{n-3}} ) + ({\color{ForestGreen}F_{n-3}}  + F_{n-4})\\
+      &= 2 {\color{ForestGreen}F_{n-3}} + F_{n-2} + F_{n-4} \\
+      &= 2 {\color{ForestGreen}F_{n-3}} + (F_{n-3} + F_{n-4}) + (F_{n-5} + {\color{ForestGreen}F_{n-6}} ) \\
+      &= 3 {\color{ForestGreen}F_{n-3}} + F_{n-4} + F_{n-5} + {\color{ForestGreen}F_{n-6}} & : F_{n-4} + F_{n-5} = F_{n-3} \\
+      &= 4 {\color{ForestGreen}F_{n-3}} + {\color{ForestGreen}F_{n-6}}
+\end{align*}
+
+\[EF_n = 
+\left\{
+  \begin{array}{lr}
+    2 &  n = 0\\
+    8 &  n = 1\\
+    4 EF_{n-1} + EF_{n-2} & n > 1
+  \end{array}
+\right.
+\]
+
+\begin{align*}
+    F_n &= \frac{\varphi^n - \psi^n}{\sqrt{5}}
+\end{align*}
+
+\begin{align*}
+    \varphi &= \frac{1 + \sqrt{5}}{2} & \psi &= \frac{1 - \sqrt{5}}{2}
+\end{align*}
+
+\begin{align*}
+  S &= \sum_{i=1}^{k} \frac{\varphi^{3i} - \psi^{3i}}{\sqrt{5}} \\
+  &= \frac{1}{\sqrt{5}}(\sum_{i=1}^{k} {(\varphi^3)}^i - \sum_{i=1}^{k} {(\psi^3)}^i) \\
+  &= \frac{1}{\sqrt{5}}(\varphi^3 \frac{1 - {(\varphi^3)}^k}{1 -  \varphi^{3}} - \psi^3 \frac{1 - {(\psi^3)}^k}{1 -  \psi^{3}})
+\end{align*}
+
+\begin{align*}
+  3k \le n \quad \Rightarrow \quad k = \lfloor n/3 \rfloor
+\end{align*}
+
+\begin{align*}
+  n &=  \log_{\varphi}(\frac{F_n \sqrt{5} + \sqrt{5F_n^2 - 4}}{2} )
+\end{align*}
