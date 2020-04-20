@@ -11,7 +11,7 @@ My solutions for different programming problems, from different platforms:
 
 ## Milestones
 
-### 2019 Goals 🙈
+### 2020 Goals 🙈
 
 - [ ] top 100 in Kattis.
 - [ ] 1 star in Leetcode.
@@ -58,13 +58,13 @@ node ./kattis/solution.js
 
 ### C++
 
-I'm using `standard stdin/stdout` to read/write for my c++ implementations.
+I'm using standard input/output `stdin/stdout` to read/write for my c++ implementations.
 To run any solution, you can use the command below. Then provide data on your own.
 
 *You can use your preferred c++ compiler, I'm using **g++***
 
 ```bash
-g++ pathToSolution/solution.js -o solution.out && ./solution.out
+g++ pathToSolution/solution.cpp -o solution.out && ./solution.out
 ```
 
 ## Ressources
