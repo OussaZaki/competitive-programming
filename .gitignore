@@ -1,3 +1,5 @@
 **/*.out
+**/*.dSYM/**
+
 .DS_Store
 /.vscode
