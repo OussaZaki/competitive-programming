@@ -11,11 +11,14 @@ My solutions for different programming problems, from different platforms:
 
 ## Milestones
 
-### 2020 Goals 🙈
+### 2020
 
+- [ ] add code runner for vscode.
 - [ ] top 100 in Kattis.
 - [ ] 1 star in Leetcode.
-- [ ] 10 ProjectEuler problems from Hackerrank.
+- [ ] 10 ProjectEuler problems from Hackerrank with editorials.
+- [ ] Finish advent of code 2018.
+- [ ] Finish advent of code 2019.
 - [ ] Finish [Algorithms and Data Structures](https://www.edx.org/micromasters/ucsandiegox-algorithms-and-data-structures) Micro Masters.
 
 ## How to run
