@@ -1,6 +1,6 @@
 CXX = g++
 CXXFLAGS = -Wall -Werror -std=c++17
-YEAR = 2018
+YEAR = 2019
 AoC_URL = https://adventofcode.com/${YEAR}/day/
 
 # Making the daily folder
